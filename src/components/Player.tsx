@@ -1,6 +1,6 @@
 import { useSphere } from "@react-three/cannon";
 import { useEffect, useRef } from "react";
-import { useThree, useFrame } from "react-three-fiber";
+import { useThree, useFrame } from "@react-three/fiber";
 import { Mesh, Vector3 } from "three";
 import { useKeyboard } from "../hooks/useKeyboard";
 
