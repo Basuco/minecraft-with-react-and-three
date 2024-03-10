@@ -1,7 +1,7 @@
 import { useSphere } from "@react-three/cannon";
 import { useEffect, useRef } from "react";
 import { useThree, useFrame } from "react-three-fiber";
-import { Vector3 } from "three";
+import { Mesh, Vector3 } from "three";
 import { useKeyboard } from "../hooks/useKeyboard";
 
 const CHARACTER_SPEED = 4;
@@ -15,7 +15,7 @@ export const Player = () => {
         jump
     } = useKeyboard();
     const { camera } = useThree();
-    const [ref, api] = useSphere(() => ({
+    const [ref, api] = useSphere<Mesh>(() => ({
         mass: 1,
         type: 'Dynamic',
         position: [0, 0.5, 0]

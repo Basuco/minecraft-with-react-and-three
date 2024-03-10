@@ -1,13 +1,13 @@
 import { useBox } from "@react-three/cannon";
 import { CubeType } from "../type";
 import * as textures from '../images/textures';
-import { Texture } from "three";
+import { Mesh, Texture } from "three";
 import { useState } from "react";
 import { useStore } from "../hooks/useStore";
 
 export const Cube = ({ id, position, texture } : CubeType) => {
     const [isHovered, setIsHovered] = useState(false);
-    const [ref] = useBox(() => ({
+    const [ref] = useBox<Mesh>(() => ({
         type: 'Static',
         position
     }));
